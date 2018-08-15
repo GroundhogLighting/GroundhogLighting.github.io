@@ -56,21 +56,26 @@
           cursor:pointer;
           
         }
+        nav > ul > li {
+          padding: 15px 1.5rem;
+        }
         #sidebar > ul > li{
           display:block;
         }
         .display-size{
+          padding: 10px;
           padding-top: 50px;
           min-height: 100vh;
           width: 100vw;
           margin:0;
-          box-sizing:border-box;
+          box-sizing:border-box;                    
         }
 
         #home{                    
           background-size:cover;
           background-repeat: no-repeat, repeat;
           background-color:black;
+          padding-left:0;
         }
 
         #home h1 {
@@ -82,7 +87,7 @@
         }
 
         .button-group{
-          width: 100vw;         
+          width: 100%;         
           text-align: center; 
         }
 
@@ -96,12 +101,18 @@
           color: white;
           background-color: #16253c;
           margin: 5px;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
         }
         .display-size p {
-            padding: 15px;
-            text-align: center;
-          }
+          padding: 15px;
+          text-align: center;
+        }
+        .display-size p a {
+          color: #16253c;
+          text-decoration:none;
+          font-weight: bold;                   
+        }
         @media only screen and (max-width: 600px) {
           .xs-hide {
             display:none;
@@ -198,7 +209,7 @@
     <div id="groundhog" class="display-size">
         <h1>Groundhog</h1>
         <div class="amp-img-container" style="max-width: 480px">
-            <amp-img alt="A view of the sea"
+            <amp-img alt="Groundhog image"
               src="images/CasaPG.png"
               width="480"
               height="480"
@@ -209,21 +220,67 @@
         </div>        
         <p>
           A SketchUp extension for performing lighting analysis 
-          using Radiance.
+          using Emp under the hood.
         </p>
         <div class='button-group'>
+          <a href="https://github.com/GroundhogLighting/Groundhog">Learn more</a>
           <a href="https://github.com/GroundhogLighting/Groundhog/raw/master/Groundhog_macosx.rbz">Download for macOS</a>
           <a href="https://github.com/GroundhogLighting/Groundhog/raw/master/Groundhog_win64.rbz">Download for Windows x64</a>            
         </div>
     </div>
+
+
     <div id="emp" class="display-size">
         <h1>Emp</h1>
+        <div class="amp-img-container" style="max-width: 480px">
+            <amp-img alt="Emp image"
+              src="images/emp.jpeg"
+              width="480"
+              height="480"
+              class="round"
+              layout="responsive"
+              >
+          </amp-img>  
+        </div>        
+        <p>
+          A scriptable <a href="http://www.radiance-online.org">Radiance-based</a> calculation engine based on 'Emp core' and 
+          <a href="https://www.lua.org/">Lua</a>.
+        </p>
+        <div class='button-group'>
+          <a href="https://github.com/GroundhogLighting/Emp">Learn more</a>
+          <a href="#" class="unavailable">Download for macOS</a>
+          <a href="#" class="unavailable">Download for Windows x64</a>            
+        </div>
     </div>
+
     <div id="emp-core" class="display-size">
         <h1>Emp core</h1>
+
+        <div class="amp-img-container" style="max-width: 480px">
+            <amp-img alt="Emp image"
+              src="images/emp_core.jpeg"
+              width="480"
+              height="480"
+              class="round"
+              layout="responsive"
+              >
+          </amp-img>  
+        </div>        
+        <p>
+          An embeddable <a href="http://www.radiance-online.org">Radiance-based</a> 
+          calculation static library. The heart of Emp.
+        </p>
+        <div class='button-group'>
+          <a href="https://github.com/GroundhogLighting/Emp_core">Learn more</a>          
+        </div>
+
     </div>
     <div id="contact" class="display-size">
         <h1>Contact</h1>
+        <p>
+            For more information, please e-mail
+          <a href="mailto:germolinal@gmail.com">German Molina</a>
+        </p>
     </div>
 
         
