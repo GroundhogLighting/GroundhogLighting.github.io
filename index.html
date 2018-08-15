@@ -1,10 +1,209 @@
-<head>
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
 
-</head>
+    <title>Groundhog Lighting</title>    
+    <link rel="canonical" href="https://www.groundhoglighting.com">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /* any custom style goes here */
+        body {
+          background-color: white;          
+          font-family:Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+        }
 
-<body>
-  <h1>Hello from Groundhog Lighting!</h1>
-  
-  <p>We are currently migrating to a different server... sorry for the inconvenience! It should be solved soon.</p>
-  
-</body>
+        nav{      
+          z-index: 9999;            
+          position:fixed;
+          top:0;
+          line-height : 3.5em;  
+          box-sizing:border-box;
+          background-color:white;
+          width: 100vw;
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;          
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        nav > ul {
+          line-height : 3.5em;
+          padding: 0;
+          margin:0;
+          text-align: left;
+        }
+        nav > ul > li, #sidebar > ul > li{
+          line-height : 3.5em;
+          display : inline;
+          padding: 0rem 1.5rem;
+          list-style: none;
+          cursor:pointer;
+          
+        }
+        #sidebar > ul > li{
+          display:block;
+        }
+        .display-size{
+          padding-top: 50px;
+          min-height: 100vh;
+          width: 100vw;
+          margin:0;
+          box-sizing:border-box;
+        }
+
+        #home{                    
+          background-size:cover;
+          background-repeat: no-repeat, repeat;
+          background-color:black;
+        }
+
+        #home h1 {
+          width: 100vw;
+          text-align:left;
+          font-weight:400;          
+          padding-left: 10px;
+          color: white;          
+        }
+
+        .button-group{
+          width: 100vw;         
+          text-align: center; 
+        }
+
+        .button-group a{
+          text-decoration:none;
+          padding: 5mm 5mm;
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;          
+          border-radius: 2px;
+          color: white;
+          background-color: #16253c;
+          margin: 5px;
+
+        }
+        @media only screen and (max-width: 600px) {
+          .xs-hide {
+            display:none;
+          }            
+          #home{            
+            background-image: url(images/small_home.jpg);               
+          }
+
+          .button-group a{
+            display:block; 
+          }
+        }
+        @media only screen and (min-width: 600px) {
+          .xs-show {
+              display:none;
+          }
+          #home{            
+            background-image: url(images/home4.jpg);               
+          }
+          #home h1 {            
+            padding-bottom: 150px;
+            background: linear-gradient(to bottom, black, transparent);                        
+          }
+            
+        }
+
+        #menu-button{
+          line-height:3.5rem;
+          font-size: 3rem;
+        }
+
+        .round {
+          border-radius:50%;          
+        }
+
+        .amp-img-container{
+          margin-left:auto;
+          margin-right:auto;
+          text-align:center;
+        }
+
+        
+
+
+      </style>
+  </head>
+  <body>
+
+    <nav >
+      <ul >        
+        <li id="menu-button" class="xs-show" on='tap:sidebar.toggle'>☰</li>        
+        <li class="xs-hide" on='tap:home.scrollTo(duration=200)'>Home</li>
+        <li class="xs-hide" on='tap:groundhog.scrollTo(duration=200)'>Groundhog</li>
+        <li class="xs-hide" on='tap:emp.scrollTo(duration=200)'>Emp</li>
+        <li class="xs-hide" on='tap:emp-core.scrollTo(duration=200)'>Emp Core</li>
+        <li class="xs-hide" on='tap:contact.scrollTo(duration=200)'>Contact</li>
+      </ul>
+    </nav>
+
+    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+      <ul>
+        <li on='tap:home.scrollTo(duration=200),sidebar.toggle'>Home</li>
+        <li on='tap:groundhog.scrollTo(duration=200),sidebar.toggle'>Groundhog</li>
+        <li on='tap:emp.scrollTo(duration=200),sidebar.toggle'>Emp</li>
+        <li on='tap:emp-core.scrollTo(duration=200),sidebar.toggle'>Emp Core</li>
+        <li on='tap:contact.scrollTo(duration=200),sidebar.toggle'>Contact</li>
+      </ul>
+    </amp-sidebar>
+
+    
+    
+
+      
+    <div id="home" class="display-size">
+        <h1>Groundhog Lighting</h1>
+    </div>
+    <div id="groundhog" class="display-size">
+        <h1>Groundhog</h1>
+        <div class="amp-img-container" style="max-width: 480px">
+            <amp-img alt="A view of the sea"
+              src="images/CasaPG.png"
+              width="480"
+              height="480"
+              class="round"
+              layout="responsive"
+              >
+          </amp-img>  
+        </div>        
+        
+        <div class='button-group'>
+          <a href="https://github.com/GroundhogLighting/Groundhog/raw/master/Groundhog_macosx.rbz">Download for macOS</a>
+          <a href="https://github.com/GroundhogLighting/Groundhog/raw/master/Groundhog_win64.rbz">Download for Windows x64</a>            
+        </div>
+    </div>
+    <div id="emp" class="display-size">
+        <h1>Emp</h1>
+    </div>
+    <div id="emp-core" class="display-size">
+        <h1>Emp core</h1>
+    </div>
+    <div id="contact" class="display-size">
+        <h1>Contact</h1>
+    </div>
+
+        
+
+  </body>
+</html>
