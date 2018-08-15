@@ -129,6 +129,8 @@
           }
           #home h1 {            
             padding-bottom: 150px;
+            padding-top: 10px;
+            margin:0;
             background: linear-gradient(to bottom, black, transparent);                        
           }
 
@@ -168,22 +170,22 @@
 
     <nav >
       <ul >        
-        <li id="menu-button" class="xs-show" on='tap:sidebar.toggle'>☰</li>        
-        <li class="xs-hide" on='tap:home.scrollTo(duration=200)'>Home</li>
-        <li class="xs-hide" on='tap:groundhog.scrollTo(duration=200)'>Groundhog</li>
-        <li class="xs-hide" on='tap:emp.scrollTo(duration=200)'>Emp</li>
-        <li class="xs-hide" on='tap:emp-core.scrollTo(duration=200)'>Emp Core</li>
-        <li class="xs-hide" on='tap:contact.scrollTo(duration=200)'>Contact</li>
+        <li tabindex="0" role="button" id="menu-button" class="xs-show" on='tap:sidebar.toggle'>☰</li>        
+        <li tabindex="1" role="button" class="xs-hide" on='tap:home.scrollTo(duration=200)'>Home</li>
+        <li tabindex="2" role="button" class="xs-hide" on='tap:groundhog.scrollTo(duration=200)'>Groundhog</li>
+        <li tabindex="3" role="button" class="xs-hide" on='tap:emp.scrollTo(duration=200)'>Emp</li>
+        <li tabindex="4" role="button" class="xs-hide" on='tap:emp-core.scrollTo(duration=200)'>Emp Core</li>
+        <li tabindex="5" role="button" class="xs-hide" on='tap:contact.scrollTo(duration=200)'>Contact</li>
       </ul>
     </nav>
 
     <amp-sidebar id="sidebar" layout="nodisplay" side="left">
       <ul>
-        <li on='tap:home.scrollTo(duration=200),sidebar.toggle'>Home</li>
-        <li on='tap:groundhog.scrollTo(duration=200),sidebar.toggle'>Groundhog</li>
-        <li on='tap:emp.scrollTo(duration=200),sidebar.toggle'>Emp</li>
-        <li on='tap:emp-core.scrollTo(duration=200),sidebar.toggle'>Emp Core</li>
-        <li on='tap:contact.scrollTo(duration=200),sidebar.toggle'>Contact</li>
+        <li tabindex="1" role="button" on='tap:home.scrollTo(duration=200),sidebar.toggle'>Home</li>
+        <li tabindex="2" role="button" on='tap:groundhog.scrollTo(duration=200),sidebar.toggle'>Groundhog</li>
+        <li tabindex="3" role="button" on='tap:emp.scrollTo(duration=200),sidebar.toggle'>Emp</li>
+        <li tabindex="4" role="button" on='tap:emp-core.scrollTo(duration=200),sidebar.toggle'>Emp Core</li>
+        <li tabindex="5" role="button" on='tap:contact.scrollTo(duration=200),sidebar.toggle'>Contact</li>
       </ul>
     </amp-sidebar>
 
